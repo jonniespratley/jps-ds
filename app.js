@@ -2,25 +2,28 @@ var DS = require( './src/ds.js' ).DS;
 var _ds = new DS( {
 	host: 'localhost/learning-yeoman',
 	models: {
-		'pages': { title: String, slug: String, body: String, published: Boolean},
-		'users': { username: String, password: String, email: String, active: Boolean}
+		'pages': { title: String, body: String, published: Boolean, created: Date}
 	}
 } );
-
-_ds.findAll( 'pages' ).then( function (data) {
-	console.log( data );
-} );
-
+var pages = [];
 _ds.create( 'pages', {
-	title: 'New pages',
-	body: 'This is the body of the pages.',
+	title: 'Page ' + Date.now(),
+	body: 'This is the page content.',
+	published: true,
 	created: new Date()
 } ).then( function (page) {
-
-	console.log( 'pages created', page );
-
-	_ds.destroy( 'pages', page ).then( function (data) {
-		console.log( 'pages delete', data );
-	} );
-
+	console.log( 'page created', page );
 } );
+
+
+_ds.findAll('pages').then(function(data){
+	pages = data;
+	console.log(pages[0]._id);
+
+
+
+	_ds.update( 'pages', pages[0]._id, {title: 'updated title'} ).then( function (data) {
+		console.log(data);
+	} );
+});
+

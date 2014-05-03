@@ -115,6 +115,9 @@
 			if (!models[table]) {
 				throw new Error( 'Must add table to options.' );
 			}
+			if(data._id){
+				delete data._id;
+			}
 			var model = new models[table]( data );
 			model.save( function (err, m) {
 				if (!err) {
@@ -156,7 +159,7 @@
 			var deferred = new Deferred();
 			models[table].findByIdAndRemove( id, function (err, m) {
 				if (!err) {
-					deferred.resolve( m );
+					deferred.resolve( true );
 				} else {
 					deferred.reject( err );
 				}
