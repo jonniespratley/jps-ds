@@ -1,6 +1,7 @@
 var DS = require( './src/ds.js' ).DS;
 var _ds = new DS( {
-	host: 'localhost/learning-yeoman',
+	//host: 'localhost/learning-yeoman',
+	host: 'test:test@ds037498.mongolab.com:37498/learning-yeoman',
 	models: {
 		'pages': { title: String, body: String, published: Boolean, created: Date}
 	}
