@@ -7,7 +7,7 @@ This is a simple MongoDB datasource module.
 Install the module with: `npm install ds`
 
 ```javascript
-var ds = require('ds');
+var ds = require('jps-ds');
 ds.awesome(); // "awesome"
 ```
 
