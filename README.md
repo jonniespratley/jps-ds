@@ -15,7 +15,7 @@ ds.awesome(); // "awesome"
 Download the [production version][min] or the [development version][max].
 
 [min]: https://raw.github.com/jonniespratley/ds/master/dist/ds.min.js
-[max]: https://raw.github.com/jonniespratley/ds/master/dist/ds.js
+[max]: https://raw.github.com/jonniespratley/ds/master/dist/jps-ds.js
 
 In your web page:
 
