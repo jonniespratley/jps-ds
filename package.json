@@ -1,5 +1,5 @@
 {
-  "name": "ds",
+  "name": "jps-ds",
   "version": "0.0.1",
   "description": "This is a simple MongoDB datasource module.",
   "keywords": [
@@ -19,10 +19,6 @@
       "type": "MIT"
     }
   ],
-  "dependencies": {
-    "mongoose": "latest",
-    "promised-io": "latest"
-  },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-qunit": "~0.2.2",
@@ -42,5 +38,9 @@
   "scripts": {
     "test": "grunt"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^3.8.8",
+    "promised-io": "^0.3.4"
+  }
 }

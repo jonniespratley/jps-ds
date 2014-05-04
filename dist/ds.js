@@ -1,6 +1,6 @@
 /*! ds - v0.0.1 - 2014-05-03
 * https://github.com/jonniespratley/ds
-* Copyright (c) 2014 Jonnie Spratley; Licensed MIT */
+* Copyright (c) 2014 ; Licensed MIT */
 /* global require, console */
 (function (exports) {
 
