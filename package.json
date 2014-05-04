@@ -3,15 +3,13 @@
   "version": "0.0.1",
   "description": "This is a simple MongoDB datasource module.",
   "keywords": [
-    "jquery-plugin"
+    "commonjs-module"
   ],
   "homepage": "https://github.com/jonniespratley/ds",
-  "bugs": "https://github.com/jonniespratley/ds/issues",
-  "author": {
-    "name": "Jonnie Spratley",
-    "email": "jonniespratley@gmail.com",
-    "url": "http://jonniespratley.me"
+  "bugs": {
+    "url": "https://github.com/jonniespratley/ds/issues"
   },
+  "author": "Jonnie Spratley <jonniespratley@gmail.com> (http://jonniespratley.me)",
   "repository": {
     "type": "git",
     "url": "https://github.com/jonniespratley/ds"
@@ -21,6 +19,10 @@
       "type": "MIT"
     }
   ],
+  "dependencies": {
+    "mongoose": "latest",
+    "promised-io": "latest"
+  },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-qunit": "~0.2.2",
@@ -31,8 +33,14 @@
     "grunt-contrib-nodeunit": "~0.2.0",
     "time-grunt": "~0.1.0",
     "load-grunt-tasks": "~0.2.0",
-    "jshint-stylish": "~0.1.3",
-	  "mongoose": "latest",
-	  "promised-io": "latest"
-  }
+    "jshint-stylish": "~0.1.3"
+  },
+  "main": "dist/ds.min.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "license": "ISC"
 }
