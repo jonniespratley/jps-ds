@@ -86,5 +86,13 @@ exports['DS'] = {
 			test.equal( data, true, 'should return object.' );
 			test.done();
 		} );
-	}
+	},
+    'no table': function(test){
+        test.expect(1);
+        test.throws(function(){
+            _ds.findAll( 'null-table' );
+        }, Error, 'should throw Error if no table');
+        test.done();
+
+    }
 };
