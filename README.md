@@ -12,6 +12,7 @@ var DS = require('jps-ds').DS;
 ```
 
 #### connect
+To create and configure a new connection use the following:
 
 ```
 var _ds = new DS( {
@@ -24,6 +25,7 @@ var _ds = new DS( {
 ```
 
 #### findAll
+To find all objects in the database use the following: 
 
 ```
 _ds.findAll('pages').then(function(data){
@@ -33,8 +35,17 @@ _ds.findAll('pages').then(function(data){
 ```
 
 #### findOne
+To find 1 object in the database use the following: 
+
+```
+_ds.findAll('pages').then(function(data){
+	pages = data;
+	console.log(pages[0]._id);
+});
+```
 
 #### create
+To create an object in the database use the following:
 
 ```
 _ds.create( 'pages', {
@@ -48,6 +59,7 @@ _ds.create( 'pages', {
 ```
 
 #### update
+To update an object in the database use the following:
 
 ```
 _ds.update( 'pages', pages[0]._id, {title: 'updated title'} ).then( function (data) {
@@ -56,9 +68,13 @@ _ds.update( 'pages', pages[0]._id, {title: 'updated title'} ).then( function (da
 ```
 
 #### destroy
+To delete an object in the database use the following:
 
-
-
+```
+_ds.destroy( 'pages', 1).then( function (data) {
+    console.log(data); //true
+} );
+```
 
 
 
