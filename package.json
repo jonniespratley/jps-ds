@@ -39,7 +39,6 @@
     "test": "grunt"
   },
   "dependencies": {
-    "jquery-deferred": "^0.3.0",
     "mongoose": "^3.8.8",
     "q": "^1.0.1"
   }
