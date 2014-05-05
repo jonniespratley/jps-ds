@@ -14,8 +14,11 @@
 	exports.DS = function (options) {
 
 		var mongoose = require( "mongoose" );
-		var Deferred = require('jquery-deferred');
+		var Q = require('q');
 		
+		var createDeferred = function(){
+			return Q.defer();
+		}
 
 		/**
 		 * I am the instance of the ds connection.
@@ -69,7 +72,7 @@
 		 * @returns {Deferred.promise|*}
 		 */
 		ds.findAll = function (table) {
-			var deferred = new Deferred();
+			var deferred = createDeferred();
 			if (!models[table]) {
 				throw new Error( 'Must add table to options.' );
 			}
@@ -91,7 +94,7 @@
 		 * @returns {Deferred.promise|*}
 		 */
 		ds.findOne = function (table, id) {
-			var deferred = new Deferred();
+			var deferred = createDeferred();
 			if (!models[table]) {
 				throw new Error( 'Must add table to options.' );
 			}
@@ -112,7 +115,7 @@
 		 * @returns {Deferred.promise|*}
 		 */
 		ds.create = function (table, data) {
-			var deferred = new Deferred();
+			var deferred = createDeferred();
 			if (!models[table]) {
 				throw new Error( 'Must add table to options.' );
 			}
@@ -139,7 +142,7 @@
 		 * @returns {Deferred.promise|*}
 		 */
 		ds.update = function (table, id, data) {
-			var deferred = new Deferred();
+			var deferred = createDeferred();
 			models[table].findByIdAndUpdate( id, data, function (err, m) {
 				if (!err) {
 					deferred.resolve( m );
@@ -157,7 +160,7 @@
 		 * @returns {Deferred.promise|*}
 		 */
 		ds.destroy = function (table, id) {
-			var deferred = new Deferred();
+			var deferred = createDeferred();
 			models[table].findByIdAndRemove( id, function (err, m) {
 				if (!err) {
 					deferred.resolve( true );
