@@ -14,7 +14,8 @@
 	exports.DS = function (options) {
 
 		var mongoose = require( "mongoose" );
-		var Deferred = require( "promised-io/promise" ).Deferred;
+		var Deferred = require('jquery-deferred');
+		
 
 		/**
 		 * I am the instance of the ds connection.
