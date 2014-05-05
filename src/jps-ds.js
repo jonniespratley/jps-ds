@@ -16,10 +16,13 @@
 		var mongoose = require( "mongoose" );
 		var Q = require('q');
 		
+		/**
+		 * I handle creating a new Deferred object.
+		 */
 		var createDeferred = function(){
 			return Q.defer();
-		}
-
+		};
+		
 		/**
 		 * I am the instance of the ds connection.
 		 * @type {null}
