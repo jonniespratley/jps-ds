@@ -3,18 +3,72 @@
 This is a simple MongoDB datasource module.
 
 ## Getting Started
-### On the server
-Install the module with: `npm install ds`
 
-```javascript
-var ds = require('jps-ds');
-ds.awesome(); // "awesome"
+### On the server
+Install the module with: `npm install jps-ds`
+
 ```
+var DS = require('jps-ds').DS;
+```
+
+#### connect
+
+```
+var _ds = new DS( {
+	//host: 'localhost/learning-yeoman',
+	host: 'test:test@ds037498.mongolab.com:37498/learning-yeoman',
+	models: {
+		'pages': { title: String, body: String, published: Boolean, created: Date}
+	}
+} );
+```
+
+#### findAll
+
+```
+_ds.findAll('pages').then(function(data){
+	pages = data;
+	console.log(pages[0]._id);
+});
+```
+
+#### findOne
+
+#### create
+
+```
+_ds.create( 'pages', {
+	title: 'Page ' + Date.now(),
+	body: 'This is the page content.',
+	published: true,
+	created: new Date()
+} ).then( function (page) {
+	console.log( 'page created', page );
+} );
+```
+
+#### update
+
+```
+_ds.update( 'pages', pages[0]._id, {title: 'updated title'} ).then( function (data) {
+		console.log(data);
+} );
+```
+
+#### destroy
+
+
+
+
+
+
+
+
 
 ### In the browser
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/jonniespratley/ds/master/dist/ds.min.js
+[min]: https://raw.github.com/jonniespratley/ds/master/dist/jps-ds.min.js
 [max]: https://raw.github.com/jonniespratley/ds/master/dist/jps-ds.js
 
 In your web page:
@@ -22,21 +76,10 @@ In your web page:
 ```html
 <script src="dist/ds.min.js"></script>
 <script>
-awesome(); // "awesome"
+ds(); // "data source"
 </script>
 ```
 
-In your code, you can attach ds's methods to any object.
-
-```html
-<script>
-var exports = Yeoman.utils;
-</script>
-<script src="dist/ds.min.js"></script>
-<script>
-Yeoman.utils.awesome(); // "awesome"
-</script>
-```
 
 ## Documentation
 _(Coming soon)_
