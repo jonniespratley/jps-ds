@@ -181,13 +181,15 @@
 		 * @param query
 		 * @param args
 		 */
-		ds.execute = function (table, name, args) {
+		ds.execute = function (name, table, args) {
 			if (!models[table]) {
 				throw new Error( 'Must add table to options.' );
 			}
 			var model = models[table];
+			var deferred = Q.defer();
 			console.log( 'calling on', table, name, args );
-			return model.call( name, args );
+			
+			return deferred.resolve(model.call( name, args ));
 		};
 
 		if (options.host) {
