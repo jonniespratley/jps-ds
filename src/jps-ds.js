@@ -14,15 +14,15 @@
 	exports.DS = function (options) {
 
 		var mongoose = require( "mongoose" );
-		var Q = require('q');
-		
+		var Q = require( 'q' );
+
 		/**
 		 * I handle creating a new Deferred object.
 		 */
-		var createDeferred = function(){
+		var createDeferred = function () {
 			return Q.defer();
 		};
-		
+
 		/**
 		 * I am the instance of the ds connection.
 		 * @type {null}
@@ -122,7 +122,7 @@
 			if (!models[table]) {
 				throw new Error( 'Must add table to options.' );
 			}
-			if(data._id){
+			if (data._id) {
 				delete data._id;
 			}
 			var model = new models[table]( data );
@@ -172,6 +172,22 @@
 				}
 			} );
 			return deferred.promise;
+		};
+
+		/**
+		 * I handle calling a method on the model instance
+		 * by using the call(name, args) method.
+		 * @param table
+		 * @param query
+		 * @param args
+		 */
+		ds.execute = function (table, name, args) {
+			if (!models[table]) {
+				throw new Error( 'Must add table to options.' );
+			}
+			var model = models[table];
+			console.log( 'calling on', table, name, args );
+			return model.call( name, args );
 		};
 
 		if (options.host) {

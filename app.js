@@ -17,6 +17,8 @@ _ds.create( 'pages', {
 } );
 
 
+
+
 _ds.findAll('pages').then(function(data){
 	pages = data;
 	console.log(pages[0]._id);

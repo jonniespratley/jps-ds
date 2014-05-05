@@ -56,8 +56,8 @@ exports['DS'] = {
 			test.done();
 		} );
 	},
-	'create': function(test){
-		test.expect(1);
+	'create': function (test) {
+		test.expect( 1 );
 		_page = {
 			title: 'Page ' + Date.now(),
 			body: 'This is the page content.',
@@ -70,8 +70,8 @@ exports['DS'] = {
 			test.done();
 		} );
 	},
-	'update': function(test){
-		test.expect(1);
+	'update': function (test) {
+		test.expect( 1 );
 		_page = {
 			title: 'Updated Page'
 		};
@@ -80,19 +80,19 @@ exports['DS'] = {
 			test.done();
 		} );
 	},
-	'destroy': function(test){
-		test.expect(1);
+	'destroy': function (test) {
+		test.expect( 1 );
 		_ds.destroy( 'pages', _page._id ).then( function (data) {
 			test.equal( data, true, 'should return object.' );
 			test.done();
 		} );
 	},
-    'no table': function(test){
-        test.expect(1);
-        test.throws(function(){
-            _ds.findAll( 'null-table' );
-        }, Error, 'should throw Error if no table');
-        test.done();
+	'no table': function (test) {
+		test.expect( 1 );
+		test.throws( function () {
+			_ds.findAll( 'null-table' );
+		}, Error, 'should throw Error if no table' );
+		test.done();
 
-    }
+	}
 };
