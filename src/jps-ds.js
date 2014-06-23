@@ -174,11 +174,18 @@
 			return deferred.promise;
 		};
 
+        /**
+         * If host, try and connect.
+         */
+        var instance = ds;
 		if (options.host) {
-			return ds.connect( options.host );
-		} else {
-			return ds;
+            try{
+                instance = ds.connect( options.host );
+            } catch( e ){
+                throw new Error(e.message || e);
+            }
 		}
+        return instance;
 	};
 
 }( typeof exports === 'object' && exports || this ));
