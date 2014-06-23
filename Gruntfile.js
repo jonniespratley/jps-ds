@@ -36,7 +36,13 @@ module.exports = function (grunt) {
 			},
 		},
 		nodeunit: {
-			files: ['test/**/*_test.js']
+            options: {
+                reporter: 'junit',
+                reporterOptions: {
+                    output: 'temp'
+                }
+            },
+			files: ['test/**/*_test.js', 'test/**/*-spec.js']
 		},
 		jshint: {
 			options: {
