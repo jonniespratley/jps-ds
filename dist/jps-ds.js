@@ -1,4 +1,4 @@
-/*! jps-ds - v0.0.1 - 2014-05-04
+/*! jps-ds - v0.0.1 - 2014-06-25
 * https://github.com/jonniespratley/ds
 * Copyright (c) 2014 ; Licensed MIT */
 /* global require, console */
@@ -180,8 +180,10 @@
 				throw new Error( 'Must add table to options.' );
 			}
 			var model = models[table];
+			var deferred = Q.defer();
 			console.log( 'calling on', table, name, args );
-			return model.prototype.call( name, args );
+			
+			return deferred.resolve(model.call( name, args ));
 		};
 
 		if (options.host) {
