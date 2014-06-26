@@ -23,7 +23,7 @@ var DS = require( '../src/jps-ds.js' ).DS;
 var _ds = new DS( {
 	host: 'test:test@ds037498.mongolab.com:37498/learning-yeoman',
 	models: {
-		'pages': { title: String, slug: String, body: String, published: Boolean}
+		'pages': { title: String, body: String, published: Boolean, created: Date}
 	}
 } );
 
@@ -65,8 +65,7 @@ exports['DS'] = {
 			created: new Date()
 		};
 		_ds.create( 'pages', _page ).then( function (data) {
-			_page = data;
-			test.ok( (_page instanceof Object), 'should return object.' );
+			test.ok(data._id, 'should return object with id.' );
 			test.done();
 		} );
 	},
@@ -76,7 +75,7 @@ exports['DS'] = {
 			title: 'Updated Page'
 		};
 		_ds.update( 'pages', _id, _page ).then( function (data) {
-			test.equals( data.title, 'Updated Page', 'should have updated title.' );
+			test.equal( data.title, 'Updated Page', 'should have updated title.' );
 			test.done();
 		} );
 	},
