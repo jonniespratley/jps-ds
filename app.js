@@ -1,20 +1,37 @@
 var DS = require( './src/jps-ds.js' ).DS;
 var _ds = new DS( {
 	//host: 'localhost/learning-yeoman',
-	host: 'localhost/angular-cms',
+	host: 'angularcms:angularcms@paulo.mongohq.com:10089/app19632340',
 	models: {
-		'pages': { title: String, body: String, published: Boolean, created: Date}
+		'posts': { title: String, body: String, published: Boolean, created: Date}
 	}
 } );
 var pages = [];
- _ds.create( 'pages', {
-	 title: 'Page ' + Date.now(),
-	 body: 'This is the page content.',
+
+ _ds.create( 'posts', {
+	 title: 'post ' + Date.now(),
+	 body: 'This is the post content.',
 	 published: true,
 	 created: new Date()
  } ).then( function (page) {
-	 console.log( 'page created', page );
+	 console.log( 'post created', page );
+	 
+	 _ds.findAll('posts').then(function(data){
+	console.log(data);
+});
+
  } );
 
 
 
+
+
+/**
+ * User Regiser / Login Example
+ */
+
+var crypto = require('crypto');
+var shasum = crypto.createHash('sha1');
+
+var password = shasum.digest('test');
+console.log('Hashed password: ' + password);
