@@ -1,25 +1,9 @@
 'use strict';
-/*
- ======== A Handy Little QUnit Reference ========
- http://api.qunitjs.com/
 
- Test methods:
- module(name, {[setup][ ,teardown]})
- test(name, callback)
- expect(numberOfAssertions)
- stop(increment)
- start(decrement)
- Test assertions:
- ok(value, [message])
- equal(actual, expected, [message])
- notEqual(actual, expected, [message])
- deepEqual(actual, expected, [message])
- notDeepEqual(actual, expected, [message])
- strictEqual(actual, expected, [message])
- notStrictEqual(actual, expected, [message])
- throws(block, [expected], [message])
- */
+//Require the DS module
 var DS = require( '../src/jps-ds.js' ).DS;
+
+//Create instance of the DS module
 var _ds = new DS( {
 	host: 'test:test@ds037498.mongolab.com:37498/learning-yeoman',
 	models: {
@@ -27,18 +11,21 @@ var _ds = new DS( {
 	}
 } );
 
-//Store reference of item
+//Store reference of a item.
+
 var _page;
-//Store reference of all items
+
+//Store reference of all items.
 var _pages;
-//Store reference of id
+
+//Store reference of items id.
 var _id;
 
+//Exports object defines the test
 exports['DS'] = {
 	setUp: function (done) {
 		done();
 	},
-
 	'findAll': function (test) {
 		test.expect( 1 );
 		_ds.findAll( 'pages' ).then( function (data) {
@@ -92,6 +79,5 @@ exports['DS'] = {
 			_ds.findAll( 'null-table' );
 		}, Error, 'should throw Error if no table' );
 		test.done();
-
 	}
 };

@@ -1,6 +1,6 @@
 {
   "name": "jps-ds",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "This is a simple MongoDB datasource module.",
   "keywords": [
     "commonjs-module"
