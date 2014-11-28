@@ -1,6 +1,5 @@
-'use strict';
-
 module.exports = function (grunt) {
+  'use strict';
 	// Load all grunt tasks
 	require( 'load-grunt-tasks' )( grunt );
 	// Show elapsed time at the end.
@@ -50,9 +49,6 @@ module.exports = function (grunt) {
 				src: 'Gruntfile.js'
 			},
 			lib: {
-				options: {
-					jshintrc: 'src/.jshintrc'
-				},
 				src: ['src/**/*.js']
 			},
 			test: {

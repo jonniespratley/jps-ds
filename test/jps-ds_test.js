@@ -1,5 +1,3 @@
-'use strict';
-
 //Require the DS module
 var DS = require( '../src/jps-ds.js' ).DS;
 
