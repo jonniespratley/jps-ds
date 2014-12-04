@@ -1,18 +1,18 @@
 {
   "name": "jps-ds",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "This is a simple MongoDB datasource module.",
   "keywords": [
     "commonjs-module"
   ],
-  "homepage": "https://github.com/jonniespratley/ds",
+  "homepage": "https://github.com/jonniespratley/jps-ds",
   "bugs": {
-    "url": "https://github.com/jonniespratley/ds/issues"
+    "url": "https://github.com/jonniespratley/jps-ds/issues"
   },
   "author": "Jonnie Spratley <jonniespratley@gmail.com> (http://jonniespratley.me)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonniespratley/ds"
+    "url": "https://github.com/jonniespratley/jps-ds"
   },
   "licenses": [
     {
@@ -32,7 +32,7 @@
     "jshint-stylish": "~0.1.3",
     "learning-yeoman-ch8": "0.0.1"
   },
-  "main": "dist/ds.min.js",
+  "main": "dist/jps-ds.js",
   "directories": {
     "test": "test"
   },
