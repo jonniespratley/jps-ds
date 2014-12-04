@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 		},
 		nodeunit: {
 			options: {
-				reporter: 'verbose'
+				reporter: 'minimal'
 			},
 			files: ['test/**/*_test.js']
 		},

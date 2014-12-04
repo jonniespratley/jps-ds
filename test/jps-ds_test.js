@@ -3,7 +3,8 @@ var DS = require( '../src/jps-ds.js' ).DS;
 
 //Create instance of the DS module
 var _ds = new DS( {
-	host: 'test:test@ds037498.mongolab.com:37498/learning-yeoman',
+	//host: 'test:test@ds037498.mongolab.com:37498/learning-yeoman',
+  host: '',
 	models: {
 		'pages': { title: String, body: String, published: Boolean, created: Date}
 	}

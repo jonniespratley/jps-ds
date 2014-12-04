@@ -1,4 +1,4 @@
-/*! jps-ds - v1.0.0 - 2014-11-27
+/*! jps-ds - v1.0.0 - 2014-12-03
 * https://github.com/jonniespratley/ds
 * Copyright (c) 2014 ; Licensed MIT */
 /* global require, console */
