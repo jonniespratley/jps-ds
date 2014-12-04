@@ -15,23 +15,9 @@ var pages = [];
 	 created: new Date()
  } ).then( function (page) {
 	 console.log( 'post created', page );
-	 
-	 _ds.findAll('posts').then(function(data){
-	console.log(data);
-});
+
 
  } );
-
-
-
-
-
-/**
- * User Regiser / Login Example
- */
-
-var crypto = require('crypto');
-var shasum = crypto.createHash('sha1');
-
-var password = shasum.digest('test');
-console.log('Hashed password: ' + password);
+_ds.findAll('posts').then(function(data){
+console.log(data);
+});

@@ -1,10 +1,12 @@
-# DS
+#jps-ds
 
 This is a simple MongoDB datasource module.
 
-## Getting Started
+Getting Started
+---------------
 
 ### On the server
+
 Install the module with: `npm install jps-ds`
 
 ```
@@ -12,6 +14,7 @@ var DS = require('jps-ds').DS;
 ```
 
 #### connect
+
 To create and configure a new connection use the following:
 
 ```
@@ -25,7 +28,8 @@ var _ds = new DS( {
 ```
 
 #### findAll
-To find all objects in the database use the following: 
+
+To find all objects in the database use the following:
 
 ```
 _ds.findAll('pages').then(function(data){
@@ -35,7 +39,8 @@ _ds.findAll('pages').then(function(data){
 ```
 
 #### findOne
-To find 1 object in the database use the following: 
+
+To find 1 object in the database use the following:
 
 ```
 _ds.findAll('pages').then(function(data){
@@ -45,6 +50,7 @@ _ds.findAll('pages').then(function(data){
 ```
 
 #### create
+
 To create an object in the database use the following:
 
 ```
@@ -59,6 +65,7 @@ _ds.create( 'pages', {
 ```
 
 #### update
+
 To update an object in the database use the following:
 
 ```
@@ -68,6 +75,7 @@ _ds.update( 'pages', pages[0]._id, {title: 'updated title'} ).then( function (da
 ```
 
 #### destroy
+
 To delete an object in the database use the following:
 
 ```
@@ -76,16 +84,9 @@ _ds.destroy( 'pages', 1).then( function (data) {
 } );
 ```
 
-
-
-
-
-
 ### In the browser
-Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/jonniespratley/ds/master/dist/jps-ds.min.js
-[max]: https://raw.github.com/jonniespratley/ds/master/dist/jps-ds.js
+Download the [production version](https://raw.github.com/jonniespratley/ds/master/dist/jps-ds.min.js) or the [development version](https://raw.github.com/jonniespratley/ds/master/dist/jps-ds.js).
 
 In your web page:
 
@@ -96,21 +97,29 @@ ds(); // "data source"
 </script>
 ```
 
+Documentation
+-------------
 
-## Documentation
-_(Coming soon)_
+*(Coming soon)*
 
-## Examples
-_(Coming soon)_
+Examples
+--------
 
-## Contributing
+*(Coming soon)*
+
+Contributing
+------------
+
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
-_Also, please don't edit files in the "dist" subdirectory as they are generated via Grunt. You'll find source code in the "lib" subdirectory!_
+*Also, please don't edit files in the "dist" subdirectory as they are generated via Grunt. You'll find source code in the "lib" subdirectory!*
 
-## Release History
-_(Nothing yet)_
+Release History
+---------------
 
-## License
- 
- Copyright (c) 2014 Jonnie Spratley. Licensed under the MIT license.
+*(Nothing yet)*
+
+License
+-------
+
+Copyright (c) 2014 Jonnie Spratley. Licensed under the MIT license.
